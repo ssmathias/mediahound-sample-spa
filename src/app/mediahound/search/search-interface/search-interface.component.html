@@ -1,0 +1,15 @@
+<h1>Search</h1>
+<app-search-input
+  [searchTerm]="term"
+  [searchScope]="scope"
+  [searchScopes]="scopes"
+  (onSearch)="onSearch($event);"
+></app-search-input>
+<div class="row">
+  <h1>{{resultsText}}</h1>
+</div>
+<div *ngIf="results.length &gt; 0">
+  <div class="row search-result" *ngFor="let result of results">
+    <app-search-result [result]="result"></app-search-result>
+  </div>
+</div>

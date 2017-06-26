@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-9">
+    <input type="search" class="form-control" placeholder="Search for..." [(ngModel)]="searchTerm" />
+  </div>
+  <div class="col-xs-3">
+    <button class="btn btn-info form-control" type="submit" (click)="doSearch();">
+      <span class="glyphicon glyphicon-search" aria-label="Search"></span>
+    </button>
+  </div>
+</div>
+<div class="row">
+  <div [class]="getScopeColClass()" *ngFor="let scope of searchScopes">
+    <label for="search-rad-{{scope.value}}">
+      <input type="radio"
+             id="search-rad-{{scope.value}}"
+             [value]="scope.value"
+             [(ngModel)]="searchScope"
+      />
+      <span class="search-scope-name">{{scope.name}}</span>
+    </label>
+  </div>
+</div>
