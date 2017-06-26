@@ -1,0 +1,19 @@
+<div class="col-xs-3 col-sm-2">
+  <img
+    *ngIf="imageUrl"
+    [src]="imageUrl"
+    [title]="itemTitle"
+    [alt]="imageName"
+    style="max-width:100%;"
+  />
+</div>
+<div class="col-xs-9 col-sm-10">
+  <p>
+    <a>
+      {{itemTitle}}
+    </a>
+  </p>
+  <small class="hidden-xs" *ngIf="result.metadata.description">
+    {{result.metadata.description}}
+  </small>
+</div>
