@@ -10,6 +10,6 @@
 </div>
 <div *ngIf="results.length &gt; 0">
   <div class="row search-result" *ngFor="let result of results">
-    <app-search-result [result]="result"></app-search-result>
+    <app-search-result [result]="result" [linkBase]="'/media/'"></app-search-result>
   </div>
 </div>

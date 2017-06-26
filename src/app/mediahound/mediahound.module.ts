@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchModule } from './search/search.module';
+import { MediaModule } from './media/media.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    SearchModule
+    SearchModule,
+    MediaModule
   ],
   declarations: [],
-  exports: [SearchModule]
+  exports: []
 })
 export class MediahoundModule { }

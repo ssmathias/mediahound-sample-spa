@@ -69,4 +69,8 @@ export class SearchResultComponent {
     return title;
   }
 
+  public get itemLink(): string {
+    return (this._linkBase) ? (this._linkBase + this.result.metadata.mhid) : '';
+  }
+
 }

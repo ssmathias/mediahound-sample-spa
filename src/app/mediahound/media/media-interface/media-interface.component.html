@@ -1,0 +1,31 @@
+<header style="margin-top: 5px;">
+  <a routerLink="/search"><span class="glyphicon glyphicon-search"></span> Search</a>
+</header>
+
+<div *ngIf="item">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <h1><img *ngIf="imageSrc" [src]="imageSrc" [alt]="imageAlt" style="max-width:100%;" /></h1>
+    </div>
+    <div class="col-xs-12 col-sm-9">
+      <h1>{{item.metadata.name}}</h1>
+      <p *ngIf="releaseDate">Released: {{item.metadata.releaseDate.toUTCString()}}</p>
+      <p *ngIf="item.metadata.description">{{item.metadata.description}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="contributors.length &gt; 0" class="panel panel-info">
+    <div class="panel-heading">Key Contributors</div>
+    <div class="panel-body">
+      <div *ngFor="let contributor of contributors" class="media">
+        <div class="media-left">
+          <h2><img [src]="getContribImageSrc(contributor)" alt="Contributor Photo" /></h2>
+        </div>
+        <div class="media-body">
+          <h2>{{getContribName(contributor)}}</h2>
+          <p>{{getContribRoles(contributor)}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
